@@ -2,5 +2,9 @@ Techtext
 Sistema para o controle e gestão para indústria textil.
 
 Descrição do teste
-Desenvolve teste de login onde valida usuário e senha correto e click no botão loga no sistema. 
+Desenvolver teste de login onde valida usuário e senha correto e click no botão loga no sistema. 
+
+Fazer validação do nome do usuário, ao informa um usuário que não esta cadastrado mostrar a mensagem, Esse usuário não existe!
+
+Validar senha ao tentar fazer login, mostrando mensam que nome ou senha estão incorretos. 
  
