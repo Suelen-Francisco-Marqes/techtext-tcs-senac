@@ -1,20 +1,23 @@
-import { faker } from '@faker-js/faker'
+/*import { faker } from '@faker-js/faker'*/
 
-describe('Create Project', () => {
+describe('Criar Produto', () => {
   beforeEach(() => {
     cy.login()
   })
 
-  it('successfully', () => {
-    const project = {
-      name: `project-${faker.datatype.uuid()}`,
-      description: faker.random.words(1)
-    }
+  beforeEach(function() {
+    cy.visit('./novo_produto.php')
+})
 
-    cy.gui_createProject(project)
+  it('exibe mensagem de erro quando o telefone se torna obrigatório mas não preenchido',function(){
+        
+    cy.get('#modelo').type('Bermuda')
+    .should('be.visible')
+    cy.get('#tipoTecido').type('Infantil')
+    .should('be.visible')
 
-    cy.url().should('be.equal', `${Cypress.config('baseUrl')}/${Cypress.env('user_name')}/${project.name}`)
-    cy.contains(project.modelo).should('be.visible')
-    cy.contains(project.tipoTecido).should('be.visible')
+    cy.contains('button', 'Cadastrar').click()
+
+    
   })
 })
