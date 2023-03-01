@@ -22,7 +22,7 @@ it('Preencher o usuario e senha validos, deve entrar na aplicação', function (
     cy.get('.error').should('be.visible')  
   })
 
-  it.only('Preencher a senha incorreta, o sistema deverá mostra que o nome ou senha estão incorretos!', function () {
+  it('Preencher a senha incorreta, o sistema deverá mostra que o nome ou senha estão incorretos!', function () {
   
     cy.get('.detalhes-nome > .field > input').type('admin')
     cy.get(':nth-child(3) > input').type('654321')
@@ -31,4 +31,5 @@ it('Preencher o usuario e senha validos, deve entrar na aplicação', function (
     cy.get('.error').should('be.visible')  
   })
   
+
 })
