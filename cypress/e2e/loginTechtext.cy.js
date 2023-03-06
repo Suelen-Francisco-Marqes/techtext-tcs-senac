@@ -1,4 +1,4 @@
-describe('Netflix', () => {
+describe('techtext', () => {
   const user = Cypress.env('user_name')
   const password = Cypress.env('user_password')
   const options = { cacheSession: false }
@@ -13,7 +13,7 @@ it('Preencher o usuario e senha validos, deve entrar na aplicação', function (
   cy.get('.button > input').click()
   })
 
-  it('Preencher o usuario que não existe no sistema, deverá aparece que a mesagem que, Esse não de usuario não existe!', function () {
+ /* it('Preencher o usuario que não existe no sistema, deverá aparece que a mesagem que, Esse não de usuario não existe!', function () {
   
     cy.get('.detalhes-nome > .field > input').type('teste')
     cy.get(':nth-child(3) > input').type('123456')
@@ -29,7 +29,18 @@ it('Preencher o usuario e senha validos, deve entrar na aplicação', function (
     cy.get('.button > input').click()
     
     cy.get('.error').should('be.visible')  
-  })
+  })*/
   
-
+  it('exibe mensagem de erro quando o telefone se torna obrigatório mas não preenchido',function(){
+    
+    cy.visit('http://localhost/techtext-tcs-senac/Frontend/novo_produto.php')
+          
+      cy.get('#modelo').type('Bermuda')
+      //.should('be.visible')
+      cy.get('#tipoTecido').type('Infantil')
+      //.should('be.visible')
+  
+      cy.get('.button > input').click() 
+    })
+  
 })
